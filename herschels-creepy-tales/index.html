@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#211c35">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; script-src 'self' file:; style-src 'self' file:; img-src 'self' file: data:; media-src 'self' file: blob: data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Herschel’s Creepy Tales</title>
+  <link rel="icon" href="assets/pumpkin.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="boards.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="masthead">
+    <div class="brand"><img src="assets/pumpkin.svg" width="52" height="52" alt=""><div><p class="eyebrow">A LITTLE SPOOKY. A LOT OF FUN.</p><h1>Herschel’s Creepy Tales</h1></div></div>
+    <div class="tools"><button id="help" class="tool" aria-label="Open grown-up guide and sound settings">Grown-ups <span aria-hidden="true">⚙</span></button><button id="fullscreen" class="tool" aria-label="Enter full screen">⛶ <span>Full screen</span></button></div>
+  </header>
+  <main>
+    <nav class="book-tabs" aria-label="Choose your book">
+      <button class="book-tab" data-board="carrots" aria-pressed="true"><span class="tab-art" data-icon="carrot" aria-hidden="true"></span><span>Creepy Carrots!</span></button>
+      <button class="book-tab" data-board="underwear" aria-pressed="false"><span class="tab-art" data-icon="underwear" aria-hidden="true"></span><span>Creepy Pair of Underwear!</span></button>
+      <button class="book-tab" data-board="crayon" aria-pressed="false"><span class="tab-art" data-icon="crayon" aria-hidden="true"></span><span>Creepy Crayon!</span></button>
+    </nav>
+    <section class="chapter" aria-labelledby="board-title">
+      <div><p class="eyebrow" id="chapter-number">STORY ONE · THE CARROT PATCH</p><h2 id="board-title">Something’s in the garden…</h2><p id="board-description">Listen to the story. Hear a clue? Give it a sound!</p></div>
+      <div class="listening-badge"><span aria-hidden="true">✦</span><span>You’re the<br><strong>sound storyteller!</strong></span></div>
+    </section>
+    <section id="sound-grid" class="sound-grid" aria-label="Story sound buttons"></section>
+    <section class="console" aria-label="Sound controls">
+      <button id="stop" class="stop"><span aria-hidden="true">■</span> Stop sounds</button>
+      <div class="now-playing"><span class="signal" aria-hidden="true"><i></i><i></i><i></i></span><div><span class="eyebrow" id="status-label">READY TO READ</span><p id="status" role="status" aria-live="polite">Your next sound is a tap away.</p></div></div>
+      <div class="volume"><button id="mute" aria-label="Mute sounds" aria-pressed="false">♪</button><label for="volume">Volume <output id="volume-value">35%</output></label><input id="volume" type="range" min="0" max="80" value="35" step="1" aria-label="Sound volume, maximum 80 percent"></div>
+    </section>
+    <footer><p><span class="offline-dot" aria-hidden="true"></span> All sounds live right here. No internet needed.</p><p id="explored">0 of 8 sounds explored <span aria-hidden="true">✧</span></p></footer>
+  </main>
+  <dialog id="settings" aria-labelledby="settings-title">
+    <div class="dialog-heading"><div><p class="eyebrow">FOR YOUR READING ADVENTURE</p><h2 id="settings-title">The grown-up corner</h2></div><button id="close-settings" class="tool" aria-label="Close grown-up settings">✕</button></div>
+    <div class="dialog-content">
+      <p>Read your physical book aloud while Herschel supplies the sounds. Pick a book above, agree on a few listening clues, and let him choose when to tap. There’s no timer, score, or wrong answer.</p>
+      <div class="guide-grid"><section><h3>1. Get comfy</h3><p>Turn the laptop sideways into landscape. Start at a low Windows volume. Tap a sound to test it.</p></section><section><h3>2. Make some mischief</h3><p>One sound plays at a time. A new tap restarts or replaces it. Stop sounds or the space bar brings quiet instantly.</p></section><section><h3>3. Go big</h3><p>Tap Full screen, or press F11 in Edge or Chrome. Escape leaves full screen. Number keys 1–8 also play the pads.</p></section></div>
+      <p class="note">These are real recorded everyday sounds used as story foley: footsteps, crunches, creaks, rattles, and more. The “Scratch, scratch” pad is a gravel scrape, not a recording of a crayon. No ghost voice, thunder, or literal crayon scribble is bundled. You can add any of those below.</p>
+      <label class="check-row"><input id="calm" type="checkbox"> Calm visuals (turn off movement)</label>
+      <h3>Your own recordings</h3><p>Replace a pad on the current book with a recording from your computer. MP3, WAV, or OGG, up to 10 MB. Use recordings you have permission to use. Imports stay in this browser’s storage when available; keep a copy of your originals.</p>
+      <label for="custom-pad">Choose a pad</label><select id="custom-pad"></select>
+      <div class="import-actions"><label class="file-button" for="custom-file">Choose audio file…</label><input id="custom-file" type="file" accept=".mp3,.wav,.ogg,audio/mpeg,audio/wav,audio/ogg"><button id="restore" class="tool">Restore bundled sound</button></div>
+      <p id="import-status" role="status" aria-live="polite"></p>
+      <details><summary>Sound credits &amp; licenses</summary><p>Recordings from the Minetest Game library, including Freesound contributions. All source notices are included in <a href="SOUND-CREDITS.md" target="_blank" rel="noopener">SOUND-CREDITS.md</a> and the licenses folder.</p><div id="credits"></div></details>
+      <p class="small-print">An independent family reading companion. Book titles identify the physical books; no book pages, narration, cover art, or characters’ likenesses are included. No affiliation with Aaron Reynolds or the publisher.</p>
+    </div>
+  </dialog>
+</body>
+</html>

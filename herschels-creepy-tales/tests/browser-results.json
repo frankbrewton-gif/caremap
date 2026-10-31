@@ -1,0 +1,21 @@
+{
+  "passed": 14,
+  "checks": [
+    "App loads with eight pads and no runtime dependencies",
+    "carrots: all eight touch pads actually play decoded local audio and stop (24 total)",
+    "underwear: all eight touch pads actually play decoded local audio and stop (24 total)",
+    "crayon: all eight touch pads actually play decoded local audio and stop (24 total)",
+    "Rapid mouse input replaces playback; no stacking; Stop resets visual state",
+    "Changing stories stops the current sound",
+    "Volume and mute affect the live audio element",
+    "Keyboard pads and Space stop work without scrolling or autoplay",
+    "Parent dialog pauses playback; calm mode and validated custom recording work",
+    "Volume, calm mode and per-book imports persist across reload; restore and invalid-file rejection work",
+    "Natural playback completion resets the playing state",
+    "Fullscreen request succeeds",
+    "No horizontal overflow at six screen sizes; large touch targets; 1366\u00d7768 controls visible",
+    "Zero external resource requests, JavaScript exceptions or CSP violations"
+  ],
+  "external_requests": [],
+  "javascript_errors": []
+}

@@ -1,0 +1,24 @@
+HERSCHEL’S CREEPY TALES
+======================
+
+1. Right-click the ZIP and choose Extract All.
+2. Open the extracted herschels-creepy-tales folder.
+3. Double-click index.html. Open with Microsoft Edge or Chrome if asked.
+4. Pick a book. Tap a sound! Full screen or F11 makes it bigger.
+
+No installation, account, internet, Python, or Node.js is needed.
+Keep the assets folder and the other files together.
+
+Start with your Windows speaker volume LOW.
+Tap STOP SOUNDS for instant quiet.
+
+Grown-ups opens instructions and lets you add your own recordings.
+README.md has the full guide; SOUND-CREDITS.md has audio licenses.
+
+12 real recorded foley effects are included across 3 boards (8 pads each).
+Ghost voices, thunder, and literal crayon scribbles are not included.
+You can import your own recordings into any pad.
+
+Tested with automated Chromium playback tests on Linux. Direct file launch
+is the intended Windows method, but Windows hardware was not available
+for verification. See TEST-RESULTS.md for exact testing and limits.
