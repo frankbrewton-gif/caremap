@@ -15,7 +15,13 @@ Tap STOP SOUNDS for instant quiet.
 Grown-ups opens instructions and lets you add your own recordings.
 README.md has the full guide; SOUND-CREDITS.md has audio licenses.
 
-12 real recorded foley effects are included across 3 boards (8 pads each).
+12 real recorded foley effects are included across 9 boards (72 pads total).
+
+Choose a book from the Tonight’s book menu.
+For moving pictures, open Moving pictures & reading.
+For narration, Grown-ups > Add a book reading lets you add your own
+recording or an audio file you have permission to use. No full-book
+narration is included. You can use Windows Sound Recorder to make one.
 Ghost voices, thunder, and literal crayon scribbles are not included.
 You can import your own recordings into any pad.
 

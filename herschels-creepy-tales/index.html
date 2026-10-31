@@ -18,11 +18,16 @@
     <div class="tools"><button id="help" class="tool" aria-label="Open grown-up guide and sound settings">Grown-ups <span aria-hidden="true">⚙</span></button><button id="fullscreen" class="tool" aria-label="Enter full screen">⛶ <span>Full screen</span></button></div>
   </header>
   <main>
-    <nav class="book-tabs" aria-label="Choose your book">
-      <button class="book-tab" data-board="carrots" aria-pressed="true"><span class="tab-art" data-icon="carrot" aria-hidden="true"></span><span>Creepy Carrots!</span></button>
-      <button class="book-tab" data-board="underwear" aria-pressed="false"><span class="tab-art" data-icon="underwear" aria-hidden="true"></span><span>Creepy Pair of Underwear!</span></button>
-      <button class="book-tab" data-board="crayon" aria-pressed="false"><span class="tab-art" data-icon="crayon" aria-hidden="true"></span><span>Creepy Crayon!</span></button>
-    </nav>
+    <div class="library-picker"><label for="book-picker">Tonight’s book</label><select id="book-picker" aria-label="Choose from all nine books"></select><button id="theater-toggle" class="tool" aria-expanded="false" aria-controls="theater">Moving pictures &amp; reading</button></div>
+    <nav class="book-tabs" aria-label="Book shortcuts"></nav>
+    <section id="theater" class="story-theater" aria-labelledby="theater-title" hidden>
+      <div class="theater-heading"><div><p class="eyebrow">OUR LITTLE STORY THEATER</p><h2 id="theater-title">Moving pictures &amp; your reading</h2></div><button id="theater-close" class="tool" aria-label="Close story theater">✕</button></div>
+      <div id="story-scene" class="story-scene" role="img" aria-label="An original animated Halloween scene"><span class="scene-moon" aria-hidden="true"></span><span class="scene-stars" aria-hidden="true">✦ · ✧ · ✦</span><span id="scene-left" class="scene-side scene-left" aria-hidden="true"></span><span id="scene-main" class="scene-main" aria-hidden="true"></span><span id="scene-right" class="scene-side scene-right" aria-hidden="true"></span><span class="scene-ground" aria-hidden="true"></span><p id="scene-caption"></p></div>
+      <p class="theater-note">Original pictures move with sounds or your reading. These are not book pages or a timed film.</p>
+      <div class="reading-controls"><button id="reading-play" class="tool" disabled>▶ Play reading</button><button id="reading-pause" class="tool" disabled>Ⅱ Pause</button><button id="reading-restart" class="tool" disabled>↺ Start over</button><button id="reading-add" class="tool">Add your reading…</button></div>
+      <label for="reading-seek" class="reading-timeline"><span>Reading position</span><output id="reading-time">0:00 / 0:00</output></label><input id="reading-seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Reading position" disabled>
+      <p id="reading-status" role="status" aria-live="polite">No reading added for this book. A grown-up can add a recording.</p>
+    </section>
     <section class="chapter" aria-labelledby="board-title">
       <div><p class="eyebrow" id="chapter-number">STORY ONE · THE CARROT PATCH</p><h2 id="board-title">Something’s in the garden…</h2><p id="board-description">Listen to the story. Hear a clue? Give it a sound!</p></div>
       <div class="listening-badge"><span aria-hidden="true">✦</span><span>You’re the<br><strong>sound storyteller!</strong></span></div>
@@ -46,8 +51,9 @@
       <label for="custom-pad">Choose a pad</label><select id="custom-pad"></select>
       <div class="import-actions"><label class="file-button" for="custom-file">Choose audio file…</label><input id="custom-file" type="file" accept=".mp3,.wav,.ogg,audio/mpeg,audio/wav,audio/ogg"><button id="restore" class="tool">Restore bundled sound</button></div>
       <p id="import-status" role="status" aria-live="polite"></p>
+      <section id="reading-import"><h3>Add a book reading</h3><p>Choose an audio recording you made or have permission to use. MP3, WAV, OGG, or M4A, up to 150 MB. It stays on this computer. No published book narration is included. The theater uses original moving illustrations, not scanned book pages, and its motion is not synchronized to specific words.</p><label for="reading-file">Reading for <strong id="reading-book-name"></strong></label><div class="import-actions"><input id="reading-file" type="file" accept=".mp3,.wav,.ogg,.m4a,audio/mpeg,audio/wav,audio/ogg,audio/mp4"><button id="reading-remove" class="tool">Remove reading</button></div><p id="reading-import-status" role="status" aria-live="polite"></p></section>
       <details><summary>Sound credits &amp; licenses</summary><p>Recordings from the Minetest Game library, including Freesound contributions. All source notices are included in <a href="SOUND-CREDITS.md" target="_blank" rel="noopener">SOUND-CREDITS.md</a> and the licenses folder.</p><div id="credits"></div></details>
-      <p class="small-print">An independent family reading companion. Book titles identify the physical books; no book pages, narration, cover art, or characters’ likenesses are included. No affiliation with Aaron Reynolds or the publisher.</p>
+      <p class="small-print">An independent family reading companion. Book titles identify the physical books; no book pages, published narration, cover art, or characters’ likenesses are included. No affiliation with the authors, illustrators, or publishers.</p>
     </div>
   </dialog>
 </body>

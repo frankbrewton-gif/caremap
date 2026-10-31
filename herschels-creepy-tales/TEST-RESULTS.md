@@ -6,19 +6,23 @@ Run: 2026-10-31. Environment: Linux, Python 3.12, system Chromium controlled thr
 
 - JavaScript syntax: `node --check app.js` and `node --check boards.js`.
 - `python tests/verify_assets.py`: **12/12 recordings passed** SHA-256 checksum, PCM WAV decoding, non-silence, duration, and sample peak checks. All peak levels are approximately **-9 dBFS**. No file is synthesized. These checks establish valid audio signals, not subjective listening quality.
-- `python tests/browser_test.py`: **14/14 functional groups passed**, including:
-  - All **24 pads** across all three modes were tapped using touch emulation. Each generated the browser's `playing` event, decoded a positive-duration recording, advanced its playback time, and stopped successfully.
-  - Mouse clicks, rapid replacement/restart, at most one active audio element, Stop, keyboard pad selection and Space stop.
+- `python tests/browser_test.py`: **24/24 functional groups passed**, including:
+  - All **72 pads** across all nine modes were tapped using touch emulation. Each generated the browser's `playing` event, decoded a positive-duration recording, advanced its playback time, and stopped successfully.
+  - Mouse clicks, rapid replacement/restart, at most one active effect audio element, Stop, keyboard pad selection and Space stop.
   - Switching story stops playback; natural completion clears active UI state.
   - Volume slider changes the actual media volume; mute/unmute works.
   - Grown-up dialog stops audio; calm visuals work.
   - A real local WAV import decoded, played through a local Blob URL, persisted after reload, and was restored to the bundled sound.
   - A deliberately corrupt audio upload was rejected.
   - Volume and calm preferences persisted across reload.
+  - Optional per-book narration: validated a local test WAV, saved and restored it across reload, played, paused, sought, restarted, reached the natural end, and removed it. A corrupt narration file was rejected. A reading from one book did not appear in another.
+  - Original scene animation runs during reading playback and stops under OS reduced-motion settings. The theater opens/closes; closing pauses reading.
+  - Effects play alongside a reading, with reading volume temporarily reduced to 35% of its selected level. Mute and Stop apply to both tracks. Switching books stops playback.
+  - The narration fixture repeats a real bundled WAV to exercise controls. It is test data, not a human reading and not a bundled story narration.
   - Fullscreen request entered fullscreen in headless Chromium and successfully exited.
   - Six viewport sizes checked: 1366×768, 1280×800, 1024×768, 1920×1080, 800×600, 390×844. No horizontal overflow; all sound targets were at least 100×140 CSS pixels. Stop is visible at 1366×768. Small viewports can scroll; the console stays at the bottom of the viewport.
   - Zero external HTTP resource requests, zero JavaScript exceptions, and zero CSP violations. External requests were blocked by the test harness.
-- Desktop and portrait screenshots were generated from the current app. The desktop layout was visually inspected.
+- Desktop, portrait and theater screenshots were generated from the current app. The desktop and theater layouts were visually inspected.
 
 ## Diagnosed and corrected during development
 
